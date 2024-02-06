@@ -1,6 +1,6 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Tess Downing"
 date: "2024-02-06"
 categories: [news, code, analysis]
 image: "image.jpg"
@@ -11,3 +11,9 @@ This is a post with executable code.
 ```{r}
 1 + 1
 ```
+
+```{r}
+library(praise)
+praise()
+```
+
