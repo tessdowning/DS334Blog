@@ -1,0 +1,14 @@
+{
+  "hash": "1fd8e8bab361fcba81ec0f88afa46435",
+  "result": {
+    "markdown": "---\ntitle: \"Blog Post 1\"\nauthor: \"Tess Downing in Collaboration with Denali Stevens\"\ndate: \"2024-02-09\"\ncategories: [news, code, analysis]\n---\n\n::: {.cell}\n\n```{.r .cell-code}\n# Scroll to the end of this code block to see how to recombine the data into a\n# graph!\n\ntuesdata <- tidytuesdayR::tt_load('2023-09-26')\n```\n\n::: {.cell-output .cell-output-stderr}\n```\n--- Compiling #TidyTuesday Information for 2023-09-26 ----\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\n--- There is 1 file available ---\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\n--- Starting Download ---\n```\n:::\n\n::: {.cell-output .cell-output-stdout}\n```\n\n\tDownloading file 1 of 1: `richmondway.csv`\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\n--- Download complete ---\n```\n:::\n\n```{.r .cell-code}\nrichmondway <- tuesdata$richmondway\n```\n:::\n\n\n\n# Introduction\n\nIn this blog post, we will be working with the richmondway dataset.This dataset is an overview of the number of times Roy Kent from _Ted Lasso_ says the work f*uck",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

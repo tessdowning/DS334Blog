@@ -21,10 +21,17 @@
     "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "posts/BlogPost1/index.html",
+    "href": "posts/BlogPost1/index.html",
+    "title": "Blog Post 1",
+    "section": "",
+    "text": "# Scroll to the end of this code block to see how to recombine the data into a\n# graph!\n\ntuesdata &lt;- tidytuesdayR::tt_load('2023-09-26')\n\n--- Compiling #TidyTuesday Information for 2023-09-26 ----\n\n\n--- There is 1 file available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 1: `richmondway.csv`\n\n\n--- Download complete ---\n\nrichmondway &lt;- tuesdata$richmondway\n\n\nIntroduction\nIn this blog post, we will be working with the richmondway dataset.This dataset is an overview of the number of times Roy Kent from Ted Lasso says the work f*uck"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "DS334Blog",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2024\n\n\nTess Downing\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Blog Post 1\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2024\n\n\nTess Downing in Collaboration with Denali Stevens\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2024\n\n\nTess Downing\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   }
 ]

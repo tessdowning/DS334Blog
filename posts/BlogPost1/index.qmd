@@ -1,0 +1,20 @@
+---
+title: "Blog Post 1"
+author: "Tess Downing in Collaboration with Denali Stevens"
+date: "2024-02-09"
+categories: [news, code, analysis]
+---
+
+```{r}
+# Scroll to the end of this code block to see how to recombine the data into a
+# graph!
+
+tuesdata <- tidytuesdayR::tt_load('2023-09-26')
+
+richmondway <- tuesdata$richmondway
+```
+
+
+# Introduction
+
+In this blog post, we will be working with the richmondway dataset.This dataset is an overview of the number of times Roy Kent from _Ted Lasso_ says the work f*uck
