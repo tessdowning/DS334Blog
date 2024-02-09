@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -144,8 +110,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="quarto-title column-body">
       <h1 class="title">Blog Post 1</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-                <div class="quarto-category">code</div>
                 <div class="quarto-category">analysis</div>
               </div>
                   </div>
@@ -182,34 +146,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scroll to the end of this code block to see how to recombine the data into a</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># graph!</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2023-09-26'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>--- Compiling #TidyTuesday Information for 2023-09-26 ----</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>--- There is 1 file available ---</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>--- Starting Download ---</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Downloading file 1 of 1: `richmondway.csv`</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>--- Download complete ---</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>richmondway <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>richmondway</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><img src="RoyKent.jpg" class="img-fluid" style="width:4in"></p>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>In this blog post, we will be working with the richmondway dataset.This dataset is an overview of the number of times Roy Kent from <em>Ted Lasso</em> says the work f*uck</p>
+<p>In this blog post, we will be working with the richmondway dataset.This dataset is an overview of the number of times Roy Kent from <em>Ted Lasso</em> says the work f*uck. This data was found in tidytuesdayR from GitHub. It was collected and created as an R package by Deepsha Menghani (https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-26/readme.md). The colors in used in the graphs come from a Ted Lasso hexcolors palette made by Vanessa Gutierrez (https://color.adobe.com/Ted-Lasso-color-theme-18178903/).</p>
+<p>Ted Lasso is a comedy in which an American Football coach is hired to lead an English soccer team. One of the characters, Roy Kent has a love for that four lettered F profanity.</p>
+<p>There are 34 observations in this dataset. The variables we are most interested in looking at are:</p>
+<p><strong>Season</strong>, The season 1, 2 or 3 associated with the count</p>
+<p><strong>Episode</strong>, The episode within the season associated with the count</p>
+<p><strong>Season_Episode</strong>, Season and episode as a combined variable</p>
+<p><strong>F_count_RK</strong>, Roy Kent’s F-ck count in that season and episode</p>
+<p><strong>cum_rk_season</strong>, Roy Kent’s cumulative F-ck count within that season</p>
+<p><strong>Imdb_rating</strong>, Imdb rating of that episode</p>
+<p>We will the explore how the f*ck count and ratings interact. While we explore this dataset, it is important to know that we will be breaking down each visualization by season to compare how viewers felt about each phase of the show.</p>
+</section>
+<section id="primary-visualizations" class="level1">
+<h1>Primary Visualizations</h1>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Plot 1 is showing how many times Roy Kent says f*ck in every episode of <em>Ted Lasso</em>. Plot 2 is show the Imdb rating for every episode of the show. In season 1, episode 9 has the highest count. Season 2 is a tie between episodes 5 and 12. and episode 4 in Season 3 takes the first place prize out of its peers. In terms of ratings the episodes that have the highest ratings are Season 1 Episode 10, Season 2 Episode 8, and Season 3 Episode 12. When looking at these plots side-by-side, they do not follow a similar pattern. This could show that the amount of profanity in an episode does not have an effect on its rating.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Plot 3 is directly comparing Imdb rating to Roy Kents f*count per episode. This plot shows very different relationships between rating and f*count. In season 1, the episodes with a lower f count, were rated higher. Season 2 was all over the place. Season 3 found its stride with episodes that had about 12 f*cks rating the highest. This is further proving there probably is not a relationship between rating and the f bomb.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This is a graph showing the mean Imdb ratings and their variability of each season of Ted Lasso. I believe there is some correspondence between the rating of the season, with the amount of times Roy Kent says the word f-ck. The word is said in Season 1, 2, and 3, 56 times, 106 times, and 138 times, respectively. This could go to say, ratings go decrease as the number of f*cks increase</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>I think with a little more time and more experience we could have found a way to directly compare IMDB ratings with the f*cks count in a more comprehensible way than the scatter plot. It is a good plot, but it could definitely be clearer and draw a better connection. I also think we could have found a way to include more of the variables from the data set and investigate other connections or trends, like if Roy switching from playing to coaching had any effect on the F count or imdb rating.</p>
+<section id="connection-to-class" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-class">Connection to Class</h2>
+<p>About a week ago , I probably would have made a bar plot for each season to compare their ratings. However, bar plots cannot show us variability and where our average lies within the data. Error bars are a great way to compare the average rating of each season because we can see that the mean rating does not represent each episode in that season. We can see the spread of the ratings.The other graphs show connection as well because we would not have been able to clean them up as well without what we’ve learned so for from this class, but the last graph does have the most elevated level of creation.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
