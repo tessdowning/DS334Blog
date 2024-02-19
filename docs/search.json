@@ -7,18 +7,46 @@
     "text": "About this blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "objectID": "posts/BlogPost2/index.html#wins-by-country",
+    "href": "posts/BlogPost2/index.html#wins-by-country",
+    "title": "Blog Post 2",
+    "section": "Wins by Country",
+    "text": "Wins by Country\n\n\n\n\n\nThere are many countries that have never had a London Marathon Winner, with only 24 countries having a winner. The country with the most wins is the UK with 44 wins. Spain, Russia, Netherlands, China, and Belgium all only have 1 win. Europe seems to produce London Marathon winners."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "objectID": "posts/BlogPost2/index.html#wins-per-category-around-the-world",
+    "href": "posts/BlogPost2/index.html#wins-per-category-around-the-world",
+    "title": "Blog Post 2",
+    "section": "Wins per Category Around the World",
+    "text": "Wins per Category Around the World"
+  },
+  {
+    "objectID": "posts/BlogPost2/index.html#men",
+    "href": "posts/BlogPost2/index.html#men",
+    "title": "Blog Post 2",
+    "section": "Men",
+    "text": "Men\n\n\n\n\n\nKenya has the most winners in the Men category of the race with 16 winners. The UK takes second place with 6, followed by Ethiopia with 5. Only 12 countries have male winners has shown by the map."
+  },
+  {
+    "objectID": "posts/BlogPost2/index.html#women",
+    "href": "posts/BlogPost2/index.html#women",
+    "title": "Blog Post 2",
+    "section": "Women",
+    "text": "Women\n\n\n\n\n\nKenya also has the most winners in the Women category with 14 winners. The UK is in second with 7 winners, and Norway comes in third with 6. Only 10 countries have winners in this category."
+  },
+  {
+    "objectID": "posts/BlogPost2/index.html#wheelchair-men",
+    "href": "posts/BlogPost2/index.html#wheelchair-men",
+    "title": "Blog Post 2",
+    "section": "Wheelchair Men",
+    "text": "Wheelchair Men\n\n\n\n\n\nThe UK has the most winners in the Men’s Wheelchair category. Switzerland come in second with 6 winners, and Canada in third with 4. There are 10 countries with wins in this category."
+  },
+  {
+    "objectID": "posts/BlogPost2/index.html#wheelchair-women",
+    "href": "posts/BlogPost2/index.html#wheelchair-women",
+    "title": "Blog Post 2",
+    "section": "Wheelchair Women",
+    "text": "Wheelchair Women\n\n\n\n\n\nThe UK has the most wins in the Women’s Wheelchair category with 15 winners. The USA comes in second with 6 winners, and Italy is in third with 4. There are 10 countries with winners in this category."
   },
   {
     "objectID": "posts/BlogPost1/index.html#connection-to-class",
@@ -28,10 +56,24 @@
     "text": "Connection to Class\nAbout a week ago , I probably would have made a bar plot for each season to compare their ratings. However, bar plots cannot show us variability and where our average lies within the data. Error bars are a great way to compare the average rating of each season because we can see that the mean rating does not represent each episode in that season. We can see the spread of the ratings.The other graphs show connection as well because we would not have been able to clean them up as well without what we’ve learned so for from this class, but the last graph does have the most elevated level of creation."
   },
   {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "DS334Blog",
     "section": "",
-    "text": "Blog Post 1\n\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2024\n\n\nTess Downing in Collaboration with Denali Stevens\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2024\n\n\nTess Downing\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2024\n\n\nTess Downing\n\n\n\n\n\n\nNo matching items"
+    "text": "Blog Post 2\n\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 21, 2024\n\n\nTess Downing\n\n\n\n\n\n\n  \n\n\n\n\nBlog Post 1\n\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2024\n\n\nTess Downing in Collaboration with Denali Stevens\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2024\n\n\nTess Downing\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2024\n\n\nTess Downing\n\n\n\n\n\n\nNo matching items"
   }
 ]
