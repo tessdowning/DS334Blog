@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "DS334Blog"
+  title: "Learn to Visualize with Me!"
   navbar:
     right:
       - about.qmd
