@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tess Downing">
+<meta name="dcterms.date" content="2024-03-08">
 
 <title>Learn to Visualize with Me! - Blog Post 3</title>
 <style>
@@ -19,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -107,13 +143,28 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Blog Post 3</h1>
-                      </div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tess Downing </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 8, 2024</p>
+      </div>
+    </div>
     
       
     </div>
@@ -129,8 +180,152 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p><img src="dogcat.jpeg" class="img-fluid" style="width:4in"></p>
+<p>The Dogs vs.&nbsp;Cats dataset was created in 2018 with data sourced from American Veterinary Medical Association via data.world and was uploaded to tidytuesday (https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-09-11/readme.md). This dataset shows the distributions of America’s most popular house pets by State. In this blog I will look at the dog and cat population per state and the percentage of dog vs cat ownership per state. Do certain states have clear preferences for a certain pet? All relevant code will reported at the end of this post.</p>
+<p><em>It is important to note that there was no data for whether or not a household had both a dog and a cat.</em></p>
+<p>There are 49 observations in this data set and I am interested in investigating the variables:</p>
+<p><strong>state</strong>, the location within the United States, including the District of Columbia</p>
+<p><strong>percent_pet_households</strong>, the percentage of houses, per state, that own a pet</p>
+<p><strong>percent_dog_owners</strong>, the percent of homes, per state, that house a dog</p>
+<p><strong>percent_cat_owners</strong>, the percent of homes, per state, that house a cat</p>
+<p><strong>dog_population</strong>, the total number of pet dogs per state</p>
+<p>and <strong>cat_population</strong>, the total number of pet cats per state</p>
+<p>To showcase my observations, I will use lollipop plots and maps of the United States. The lollipop plots will be used to display the population counts of each species and the maps will be used to show the percent of households in each state that own each pet.</p>
+<section id="percentage-of-pet-owners-in-each-state" class="level1">
+<h1>Percentage of Pet Owners in Each State</h1>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Most states have a high percentage of pet owners. The state with the most pet owners is Vermont (70.8%) and the state with the least pet owners is District of Colombia (21.9%)</p>
+</section>
+<section id="dog-population-per-state" class="level1">
+<h1>Dog Population Per State</h1>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Texas has the highest dog population with 7163 pups and the DOC has the lowest with 42 dogs. Texas has 5565 cats and DC has 63 cats. Based on these numbers, it does not seem as though there is a clear preference for one animal over the other</p>
+</section>
+<section id="american-households-with-dogs" class="level1">
+<h1>American Households with Dogs</h1>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Arkansas has the highest percentage of dog owners with 47.9% and the District of Columbia has the lowest with 13.1%</p>
+</section>
+<section id="cat-population-lollipop" class="level1">
+<h1>Cat Population Lollipop</h1>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>California has the highest number of cats with a total of 7118 cats. The District of Columbia has the least amount of cats with a total of 63 cats. California has 6687 dogs and the DC has 42 dogs. Based on these numbers it doesn’t seem, like there is a clear preference for a specific pet.</p>
+</section>
+<section id="cat-households" class="level1">
+<h1>Cat Households</h1>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Vermont has the highest percentage of cat owners (49.5) and the District of Columbia has the lowest percentage of cat owners (11.6).</p>
+<p>There is no direct causation to be declared from these graphs, but there are a few inferences that can be made. For example, Vermont has a high amount of pet owners, especially dog owners. Vermont is a very rural state with citizens that tend to love the outdoors. It makes sense that there would be a high amount of dogs in Vermont because of an active, and outdoor lifestyle there. The DOC has a low percentage of pet owners. With DC being such a busy metropolis it would make sense that many people do not have time to take care of a pet in the way that they would like to. Also not many people live within the District of Columbia, instead living in surrounding states and commuting in for work.</p>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>state_df <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>cats_vs_dogs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"cats_vs_dogs.csv"</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>pet_df <span class="ot">&lt;-</span> cats_vs_dogs <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">state =</span> <span class="fu">str_to_lower</span>(state))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>pet_full <span class="ot">&lt;-</span> <span class="fu">left_join</span>(state_df, pet_df, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"region"</span> <span class="ot">=</span> <span class="st">"state"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pet_full, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="fu">aes</span>(<span class="at">fill =</span> percent_pet_households)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">palette =</span> <span class="st">"Greens"</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percentage of Pet Owners Per State"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>percent_df <span class="ot">&lt;-</span> pet_df <span class="sc">|&gt;</span> <span class="fu">filter</span>(percent_pet_households <span class="sc">==</span> <span class="fu">max</span>(percent_pet_households) <span class="sc">|</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                     percent_pet_households <span class="sc">==</span> <span class="fu">min</span>(percent_pet_households)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, percent_pet_households)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>percent_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dog_full <span class="ot">&lt;-</span> pet_full <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Type_ordered =</span> <span class="fu">fct_reorder</span>(<span class="at">.f =</span> region, <span class="at">.x =</span> dog_population))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dog_full, <span class="fu">aes</span>(<span class="at">x =</span> Type_ordered, <span class="at">y =</span> dog_population)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> Type_ordered, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> dog_population),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">"red2"</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"red4"</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"State"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Dog Population"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Number of Dogs in Each State"</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>count_dog <span class="ot">&lt;-</span> pet_df <span class="sc">|&gt;</span> <span class="fu">filter</span>(dog_population <span class="sc">==</span> <span class="fu">max</span>(dog_population) <span class="sc">|</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                     dog_population <span class="sc">==</span> <span class="fu">min</span>(dog_population)) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, dog_population)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>count_dog <span class="sc">|&gt;</span> <span class="fu">tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pet_full, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="fu">aes</span>(<span class="at">fill =</span> percent_dog_owners)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">palette =</span> <span class="st">"Reds"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percentage of Households that Own Dogs"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Percent of Dog Households"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>per_dog <span class="ot">&lt;-</span> pet_df <span class="sc">|&gt;</span> <span class="fu">filter</span>(percent_dog_owners <span class="sc">==</span> <span class="fu">max</span>(percent_dog_owners) <span class="sc">|</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                     percent_dog_owners <span class="sc">==</span> <span class="fu">min</span>(percent_dog_owners)) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, percent_dog_owners)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>per_dog <span class="sc">|&gt;</span> <span class="fu">tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cat_full <span class="ot">&lt;-</span> pet_full <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Type_ordered =</span> <span class="fu">fct_reorder</span>(<span class="at">.f =</span> region, <span class="at">.x =</span> cat_population))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cat_full, <span class="fu">aes</span>(<span class="at">x =</span> Type_ordered, <span class="at">y =</span> cat_population)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> Type_ordered, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> cat_population),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">"cyan"</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"navy"</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"State"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Cat Population"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Number of Cats in Each State"</span>) <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>count_cat <span class="ot">&lt;-</span> pet_df <span class="sc">|&gt;</span> <span class="fu">filter</span>(cat_population <span class="sc">==</span> <span class="fu">max</span>(cat_population) <span class="sc">|</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                     cat_population <span class="sc">==</span> <span class="fu">min</span>(cat_population)) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, cat_population)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>count_cat <span class="sc">|&gt;</span> <span class="fu">tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pet_full, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="fu">aes</span>(<span class="at">fill =</span> percent_cat_owners)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"albers"</span>, <span class="at">lat0 =</span> <span class="dv">39</span>, <span class="at">lat1 =</span> <span class="dv">45</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">palette =</span> <span class="st">"Blues"</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percent of Households with Pet Cats"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Percent of Cat Households"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>per_cat <span class="ot">&lt;-</span> pet_df <span class="sc">|&gt;</span> <span class="fu">filter</span>(percent_cat_owners <span class="sc">==</span> <span class="fu">max</span>(percent_cat_owners) <span class="sc">|</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                     percent_cat_owners <span class="sc">==</span> <span class="fu">min</span>(percent_cat_owners)) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, percent_cat_owners)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>per_cat <span class="sc">|&gt;</span> <span class="fu">tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

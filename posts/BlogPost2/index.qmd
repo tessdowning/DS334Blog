@@ -10,7 +10,7 @@ categories: [analysis]
 
 # Introduction
 
-In this blog post I will be working with the London Marathon dataset created by Nicola Rennie (https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-04-25). I will specfically be looking at the winner's subset. This dataset examines every winner of the marathon, their times, and nationality. All code used in this blog post can be seen at the end of the post.
+In this blog post I will be working with the London Marathon dataset created by Nicola Rennie (https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-04-25). I will specifically be looking at the winner's subset. This dataset examines every winner of the marathon, their times, and nationality. All code used in this blog post can be seen at the end of the post.
 
 There are 163 observations in this dataset. The variables we are most interested in looking at are:
 
