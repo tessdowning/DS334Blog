@@ -8,7 +8,7 @@ categories: [analysis]
 
 ![](dogcat.jpeg){width="4in"} 
 
-The Dogs vs. Cats dataset was created in 2018 with data sourced from American Veterinary Medical Association via data.world and was uploaded to tidytuesday (https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-09-11/readme.md). This dataset shows the distributions of America's most popular house pets by State. In this blog I will look at the dog and cat population per state and the percentage of dog vs cat ownership per state. Do certain states have clear preferences for a certain pet? All relevant code will reported at the end of this post. 
+The Dogs vs. Cats dataset was created in 2018 with data sourced from American Veterinary Medical Association via data.world and was uploaded to tidytuesday (https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-09-11/readme.md). This dataset shows the distributions of America's most popular house pets by State. The District og Columbia is counted as a state in this dataset. In this blog I will look at the dog and cat population per state and the percentage of dog vs cat ownership per state. Do certain states have clear preferences for a certain pet? All relevant code will reported at the end of this post. 
 
 *It is important to note that there was no data for whether or not a household had both a dog and a cat.*
 
@@ -182,7 +182,12 @@ per_cat |> tibble()
 Vermont has the highest percentage of cat owners (49.5) and the District of Columbia has the lowest percentage of cat owners (11.6). 
 
 There is no direct causation to be declared from these graphs, but there are a few inferences that can be made. 
-For example, Vermont has a high amount of pet owners, especially dog owners. Vermont is a very rural state with citizens that tend to love the outdoors. It makes sense that there would be a high amount of dogs in Vermont because of an active, and outdoor lifestyle there. The DOC has a low percentage of pet owners. With DC being such a busy metropolis it would make sense that many people do not have time to take care of a pet in the way that they would like to. Also not many people live within the District of Columbia, instead living in surrounding states and commuting in for work.  
+
+For example, Vermont has a high amount of pet owners, especially dog owners. Vermont is a very rural state with citizens that tend to love the outdoors. It makes sense that there would be a high amount of dogs in Vermont because of an active, and outdoor lifestyle there. The DOC has a low percentage of pet owners. With DC being such a busy metropolis it would make sense that many people do not have time to take care of a pet in the way that they would like to, live in apartments, or are living in surrounding states and commuting in for work. It does not seem like many states have a clear preference in pet according to the maps. However, you can tell which states have a higher affinity for pets in general. These include Vermont, Texas, Arkansas, South Dakota, and New Mexico.  
+
+In the future, I would like to use a similar data set that has information about people who own both cats and dogs. I feel like it would be interesting to look at the overlap and that would definitely be more telling of whether or not certain states had a clear bias for dogs or cats. The data was flawed by the fact it was lacking this interaction.
+
+I chose to represent the percentage of pet, dog, and cat owners on a map because it demonstrates how where a person lives influences their behavior. I wanted to see if location had an impact on choice of pet. 
 
 # Code
 ```{r}
