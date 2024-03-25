@@ -35,6 +35,7 @@ library(maps)
 library(tidyverse)
 library(readr)
 library(here)
+library(plotly)
 state_df <- ggplot2::map_data("state")
 cats_vs_dogs <- read_csv(here("cats_vs_dogs.csv"))
 pet_df <- cats_vs_dogs |> mutate(state = str_to_lower(state))
@@ -44,12 +45,13 @@ pet_full <- left_join(state_df, pet_df, by = c("region" = "state"))
 # Percentage of Pet Owners in Each State
 ```{r}
 #| echo: false
-ggplot(data = pet_full, aes(x = long, y = lat, group = group)) +
+plotly_try <- ggplot(data = pet_full, aes(x = long, y = lat, group = group, label = percent_pet_households, other_label = region)) +
   geom_polygon(colour = "black", aes(fill = percent_pet_households)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   theme_void() +
   scale_fill_distiller(type = "seq", direction = 1, palette = "Greens") +
   labs(title = "Percentage of Pet Owners Per State")
+ggplotly(plotly_try, tooltip = c("other_label", "label"))
 ```
 
 ```{r}
@@ -70,7 +72,7 @@ Most states have a high percentage of pet owners. The state with the most pet ow
 dog_full <- pet_full |>
   mutate(Type_ordered = fct_reorder(.f = region, .x = dog_population))
 
-ggplot(data = dog_full, aes(x = Type_ordered, y = dog_population)) +
+plotly2 <- ggplot(data = dog_full, aes(x = Type_ordered, y = dog_population, label = dog_population)) +
   geom_segment(aes(xend = Type_ordered, y = 0, yend = dog_population),
                colour = "red2") +
   geom_point(colour = "red4") +
@@ -79,6 +81,7 @@ ggplot(data = dog_full, aes(x = Type_ordered, y = dog_population)) +
          y = "Dog Population",
        title = "Number of Dogs in Each State") +
   theme_minimal() 
+ggplotly(plotly2, tooltip = c("label"))
 ```
 
 ```{r}
@@ -104,13 +107,15 @@ Texas has the highest dog population with 7163 pups and the DOC has the lowest w
 # American Households with Dogs 
 ```{r}
 #| echo: false
-ggplot(data = pet_full, aes(x = long, y = lat, group = group)) +
+plotly3 <- ggplot(data = pet_full, aes(x = long, y = lat, group = group, label = percent_dog_owners,
+                                       other_label = region)) +
   geom_polygon(colour = "black", aes(fill = percent_dog_owners)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   theme_void() +
   scale_fill_distiller(type = "seq", direction = 1, palette = "Reds") +
   labs(title = "Percentage of Households that Own Dogs",
        fill = "Percent of Dog Households")
+ggplotly(plotly3, tooltip = c("other_label", "label"))
 ```
 
 ```{r}
@@ -138,7 +143,7 @@ Arkansas has the highest percentage of dog owners with 47.9% and the District of
 #| echo: false
 cat_full <- pet_full |>
   mutate(Type_ordered = fct_reorder(.f = region, .x = cat_population))
-ggplot(data = cat_full, aes(x = Type_ordered, y = cat_population)) +
+plotly4 <- ggplot(data = cat_full, aes(x = Type_ordered, y = cat_population, label = cat_population)) +
   geom_segment(aes(xend = Type_ordered, y = 0, yend = cat_population),
                colour = "cyan") +
   geom_point(size = 2, colour = "navy") +
@@ -147,6 +152,7 @@ ggplot(data = cat_full, aes(x = Type_ordered, y = cat_population)) +
          y = "Cat Population",
        title = "Number of Cats in Each State") +
   theme_minimal()
+ggplotly(plotly4, tooltip = c( "label"))
 ```
 
 ```{r}
@@ -162,13 +168,14 @@ California has the highest number of cats with a total of 7118 cats. The Distric
 # Cat Households
 ```{r}
 #| echo: false
-ggplot(data = pet_full, aes(x = long, y = lat, group = group)) +
+plotly5 <- ggplot(data = pet_full, aes(x = long, y = lat, group = group, label = percent_cat_owners, other_label = region)) +
   geom_polygon(colour = "black", aes(fill = percent_cat_owners)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   theme_void() +
   scale_fill_distiller(type = "seq", direction = 1, palette = "Blues") +
   labs(title = "Percentage of Households with Pet Cats",
        fill = "Percent of Cat Households")
+ggplotly(plotly5, tooltip = c("other_label", "label"))
 ```
 
 ```{r}
